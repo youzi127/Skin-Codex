@@ -1,5 +1,7 @@
 # Skin Codex
 
+![Skin Codex interface example](./docs/images/skin-codex-shinchan-example.png)
+
 一个面向 Codex Desktop 的开源本地主题开发工具。主题由 CSS、JSON 和本地图片组成，通过本机回环 CDP 加载；不修改官方应用文件、`app.asar` 或签名。
 
 当前公开的是纯开发版：不含商业 Runtime、加密/混淆实现、主题签名、公私钥或私有分发逻辑。你可以自由创建、编辑、导入和分享主题包。

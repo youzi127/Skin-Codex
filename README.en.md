@@ -1,5 +1,7 @@
 # Skin Codex
 
+![Skin Codex interface example](./docs/images/skin-codex-shinchan-example.png)
+
 An open-source local theme-development tool for Codex Desktop. Themes use CSS, JSON, and local images and load through loopback CDP; the project does not modify official application files, `app.asar`, or signatures.
 
 The public repository is the development edition only: no commercial runtime, encryption/obfuscation implementation, theme signing, public/private keys, or private distribution logic. You can create, edit, import, and share theme packages freely.
