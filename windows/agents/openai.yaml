@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skin Codex"
+  short_description: "Develop, apply, verify, or restore editable Codex themes"
+  default_prompt: "Use $skin-codex-theme-dev to develop, apply, verify, update, or restore an editable Codex desktop theme."

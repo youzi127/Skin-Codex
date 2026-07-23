@@ -1,0 +1,14 @@
+**/.DS_Store
+*.log
+*.tmp
+.DS_Store
+.idea/
+.vscode/
+.superpowers/
+.worktrees/
+README.preview.html
+docs/readme-preview.html
+release/
+runtime/
+windows/runtime/
+windows/samples/theme-packs/*.zip

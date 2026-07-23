@@ -1,0 +1,19 @@
+{
+    "schemaVersion":  1,
+    "id":  "skin-codex-default",
+    "name":  "Skin Codex Default",
+    "brandSubtitle":  "SKIN CODEX",
+    "tagline":  "An editable local Codex theme development environment.",
+    "projectPrefix":  "选择项目 · ",
+    "projectLabel":  "◉  选择项目",
+    "statusText":  "SKIN CODEX ONLINE",
+    "quote":  "MAKE SOMETHING WONDERFUL",
+    "image":  "dream-reference.jpg",
+    "appearance":  "auto",
+    "art":  {
+                "focusX":  0.5,
+                "focusY":  0.5,
+                "safeArea":  "auto",
+                "taskMode":  "ambient"
+            }
+}

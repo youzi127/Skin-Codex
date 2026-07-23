@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "sample-b-plus-minimal",
+  "name": "B+ Minimal Studio",
+  "image": "background.jpg",
+  "appearance": "dark",
+  "art": {
+    "focusX": 0.52,
+    "focusY": 0.5,
+    "safeArea": "auto",
+    "taskMode": "ambient"
+  },
+  "palette": {
+    "accent": "#7dd3fc"
+  },
+  "style": {
+    "css": "theme.css"
+  },
+  "components": {
+    "file": "components.json"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "home": {
+    "eyebrow": "SKIN CODEX · B+ SAMPLE",
+    "title": "Build your own workspace",
+    "subtitle": "A minimal declarative home module with only local theme data.",
+    "status": "Editable sample",
+    "cards": [
+      {
+        "title": "Explore code",
+        "description": "Start with the active project context.",
+        "action": {
+          "type": "focus-composer"
+        }
+      },
+      {
+        "title": "Shape a theme",
+        "description": "Edit CSS and JSON, then let the watcher refresh.",
+        "action": {
+          "type": "insert-prompt",
+          "value": "Help me design a focused, accessible theme for this project."
+        }
+      }
+    ]
+  }
+}
