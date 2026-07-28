@@ -26,7 +26,6 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-dream-
 - 仅使用本机 `127.0.0.1` CDP；不修改官方 Codex 安装目录。
 - 主题包不可执行 JavaScript；引擎只提供受限的声明式接口。
 - 仓库仅附带抽象或原创技术样例；请在提交主题素材前确认再分发权利。
-- 旧商业化实现保留在维护者本地，未包含在公开历史中。
 
 ## 许可证
 
