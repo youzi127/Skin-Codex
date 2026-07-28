@@ -65,4 +65,16 @@ for (const restrictedPack of [
 assert.equal(await exists("samples/theme-packs/sample-b-plus-minimal/theme.json"), true, "Development edition must retain an editable B+ sample.");
 assert.equal(await exists("samples/theme-packs/sample-b-plus-minimal/components.json"), true, "Development edition must retain a declarative B+ component example.");
 
+const traySource = await fs.readFile(path.join(windowsRoot, "scripts", "tray-dream-skin.ps1"), "utf8");
+assert.match(
+  traySource,
+  /\$AiModelAccessUrl\s*=\s*['"]https:\/\/useaifor\.me\/register\?aff=J7F65KDMA542['"]/,
+  "The open-source tray must keep the disclosed AI model access destination in source control.",
+);
+assert.match(
+  traySource,
+  /-Text\s+['"]AI 模型接入['"][\s\S]{0,500}?Start-Process\s+-FilePath\s+\$AiModelAccessUrl/s,
+  "The tray must expose an AI model access item that opens the configured destination in the default browser.",
+);
+
 console.log("PASS: public development edition excludes commercial signing/runtime paths and restricted demonstration packs.");

@@ -20,6 +20,18 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-dream-
 
 安装完成后使用桌面或开始菜单的 **Skin Codex** 快捷方式启动。脚本仅监听 `127.0.0.1`，并在需要重启已打开的 Codex 时请求确认。
 
+## 日常使用
+
+从 **Skin Codex** 启动后，右下角会出现托盘图标。右键图标可完成：
+
+- **应用或重新应用 / 暂停皮肤**：控制当前主题是否显示。
+- **更换背景图**：快速把当前主题替换为一张本地背景图。
+- **导入主题包**：选择主题目录或 `.zip` 包，导入后自动应用。
+- **保存当前主题 / 已保存主题 / 删除主题**：保存当前配置、切换已保存主题或管理不再需要的主题。
+- **完全恢复 Codex**：移除皮肤效果并恢复官方外观。
+
+开发主题可从 `samples/theme-packs/sample-b-plus-minimal` 复制一份开始；若在 Codex 中工作，可使用本地 `skin-codex-theme-dev` Skill 创建、调试、验证和打包主题。主题包仅由 `theme.json`、CSS、JSON 与本地图片组成，不携带 JavaScript 或其他可执行文件。
+
 验证当前会话：
 
 ```powershell

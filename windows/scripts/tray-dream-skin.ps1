@@ -15,6 +15,7 @@ $paths = Initialize-DreamSkinThemeStore -SkillRoot $SkillRoot -StateRoot $StateR
 $powershell = (Get-Command powershell.exe -ErrorAction Stop).Source
 $wscript = (Get-Command wscript.exe -ErrorAction Stop).Source
 $launcher = Join-Path $PSScriptRoot 'launch-hidden.vbs'
+$AiModelAccessUrl = 'https://useaifor.me/register?aff=J7F65KDMA542'
 
 function Get-DreamSkinTrayIconPath {
   param(
@@ -233,6 +234,9 @@ try {
     [void]$menu.Items.Add($savedMenu)
     [void]$menu.Items.Add($deleteMenu)
 
+    $null = Add-DreamSkinTrayItem -Items $menu.Items -Text 'AI 模型接入' -Action {
+      Start-Process -FilePath $AiModelAccessUrl | Out-Null
+    }
     $null = Add-DreamSkinTrayItem -Items $menu.Items -Text '打开图片文件夹' -Action {
       Start-Process -FilePath explorer.exe -ArgumentList @($paths.Images) | Out-Null
     }

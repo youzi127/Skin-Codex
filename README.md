@@ -15,6 +15,13 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-dream-
 
 详细用法、主题包结构和样例见 [windows/README.md](./windows/README.md)。
 
+## 简单使用
+
+1. 安装后请从桌面或开始菜单的 **Skin Codex** 启动；它会连接已安装的 Codex Desktop，并在右下角保留主题托盘入口。
+2. 右键托盘图标可应用或暂停皮肤、更换背景图、导入主题包、保存当前主题，以及在“已保存主题”中切换或删除主题。
+3. 收到主题包时，选择 **导入主题包** 并选取 `.zip`；导入后会自动应用，也可以从“已保存主题”随时切换回来。
+4. 开发自己的主题时，可从 `samples/theme-packs/sample-b-plus-minimal` 复制一份开始，或使用本地 `skin-codex-theme-dev` Skill；主题包只使用 `theme.json`、CSS、JSON 和本地图片，不包含可执行脚本。
+
 ## 开源边界
 
 - 仅使用本机 `127.0.0.1` CDP；不修改官方 Codex 安装目录。
