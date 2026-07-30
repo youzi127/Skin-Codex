@@ -6,6 +6,28 @@ An open-source local theme-development tool for Codex Desktop. Themes use CSS, J
 
 The public repository is the development edition only: no commercial runtime, encryption/obfuscation implementation, theme signing, public/private keys, or private distribution logic. You can create, edit, import, and share theme packages freely.
 
+## Exclusive sponsor
+
+<p align="center">
+  <a href="https://useaifor.me/register?aff=J7F65KDMA542">
+    <img src="docs/images/sponsor-useaifor.svg" alt="useaifor.me" height="72">
+  </a>
+</p>
+
+<p align="center">
+  <strong>AI model access · Build without interruption</strong><br>
+  <sub>Flexible model access · OpenAI-compatible clients</sub>
+</p>
+
+<p align="center">
+  Thanks to <a href="https://useaifor.me/register?aff=J7F65KDMA542"><strong>useaifor.me</strong></a> for supporting this project.<br>
+  An AI model access service for developers who use OpenAI-compatible clients.
+</p>
+
+<p align="center">
+  <sub>Theme installation and API configuration stay separate; this project never rewrites your provider settings.</sub>
+</p>
+
 ## Quick start (Windows)
 
 ```powershell
@@ -14,6 +36,8 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-dream-
 ```
 
 See [windows/README.en.md](./windows/README.en.md) for usage, package structure, and samples.
+
+For authoring a theme, start from `samples/theme-packs/sample-b-plus-minimal` or use the included [`skin-codex-theme-dev` skill](./skills/skin-codex-theme-dev/). Theme packages contain only `theme.json`, CSS, JSON, and local images—never executable scripts.
 
 ## Open-source boundaries
 
