@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="96" viewBox="0 0 420 96" role="img" aria-labelledby="title desc">
+  <title id="title">useaifor.me</title>
+  <desc id="desc">AI model access</desc>
+  <rect width="420" height="96" rx="18" fill="#f7fbff"/>
+  <rect x="1" y="1" width="418" height="94" rx="17" fill="none" stroke="#b7daf6" stroke-width="2"/>
+  <circle cx="54" cy="48" r="26" fill="#168dc8"/>
+  <path d="M43 37h22v8H51v6h11v8H43z" fill="#fff"/>
+  <text x="94" y="48" fill="#20324a" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">useaifor.me</text>
+  <text x="96" y="70" fill="#5680a5" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="1.8">AI MODEL ACCESS</text>
+</svg>
