@@ -42,6 +42,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-dream-
 2. 右键托盘图标可应用或暂停皮肤、更换背景图、导入主题包、保存当前主题，以及在“已保存主题”中切换或删除主题。
 3. 收到主题包时，选择 **导入主题包** 并选取 `.zip`；导入后会自动应用，也可以从“已保存主题”随时切换回来。
 4. 开发自己的主题时，可从 `samples/theme-packs/sample-b-plus-minimal` 复制一份开始，或使用仓库内的 [`skin-codex-theme-dev` Skill](./skills/skin-codex-theme-dev/)；主题包只使用 `theme.json`、CSS、JSON 和本地图片，不包含可执行脚本。
+5. 要在自己的 Codex 中安装该 Skill，可运行：`python C:\Users\Administrator\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py --repo youzi127/Skin-Codex --path skills/skin-codex-theme-dev`。安装后开启一个新的 Codex 任务，即可用 `$skin-codex-theme-dev` 调用它。
 
 ## 开源边界
 

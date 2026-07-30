@@ -39,6 +39,8 @@ See [windows/README.en.md](./windows/README.en.md) for usage, package structure,
 
 For authoring a theme, start from `samples/theme-packs/sample-b-plus-minimal` or use the included [`skin-codex-theme-dev` skill](./skills/skin-codex-theme-dev/). Theme packages contain only `theme.json`, CSS, JSON, and local images—never executable scripts.
 
+To install the skill into Codex, run `python C:\Users\Administrator\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py --repo youzi127/Skin-Codex --path skills/skin-codex-theme-dev`. Start a new Codex task afterwards, then invoke it with `$skin-codex-theme-dev`.
+
 ## Open-source boundaries
 
 - Uses loopback `127.0.0.1` CDP only; never modifies the official Codex installation.
