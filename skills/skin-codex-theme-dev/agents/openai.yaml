@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skin Codex Theme Dev"
+  short_description: "Create and validate Skin Codex desktop themes"
+  default_prompt: "Use $skin-codex-theme-dev to create, debug, validate, or package a Skin Codex theme."
