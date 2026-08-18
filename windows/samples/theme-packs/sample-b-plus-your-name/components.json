@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "chrome": {
+    "route": "home",
+    "title": "黄昏工作室",
+    "subtitle": "在名字消失之前，留下一件完成的事",
+    "badge": "KATAWARE DOKI"
+  },
+  "home": {
+    "eyebrow": "彗星轨迹 · 已对齐",
+    "title": "在相遇之前，先让想法抵达。",
+    "subtitle": "把还没说出口的念头变成清晰的下一步；从一个小小的线索开始，也能走到想去的地方。",
+    "status": "黄昏窗口 · 开启中",
+    "cards": [
+      {
+        "title": "留下线索",
+        "description": "先把此刻最重要的念头说清楚",
+        "action": {
+          "type": "insert-prompt",
+          "value": "请帮我把这个还很模糊的想法整理成清晰的目标、已知条件、未知问题和下一步行动。"
+        }
+      },
+      {
+        "title": "跨过时间差",
+        "description": "把复杂事情拆成现在能完成的一步",
+        "action": {
+          "type": "insert-prompt",
+          "value": "请把当前目标拆成一个今天就能开始的最小步骤，并说明完成标准、风险和验证方式。"
+        }
+      },
+      {
+        "title": "让答案相遇",
+        "description": "比较选项，找到最值得继续的方向",
+        "action": {
+          "type": "insert-prompt",
+          "value": "请比较我正在考虑的方案：列出每个方案的收益、代价、风险和推荐条件，并给出明确建议。"
+        }
+      },
+      {
+        "title": "回到此刻",
+        "description": "从这里开始，把事情真正做出来",
+        "action": {
+          "type": "focus-composer"
+        }
+      }
+    ],
+    "note": {
+      "title": "黄昏备忘",
+      "lines": [
+        "重要的事，先留下名字。",
+        "然后从眼前这一小步开始。"
+      ]
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "home": {
+    "eyebrow": "财神打工版 · 专属工作台",
+    "title": "今天先把项目搞赚钱",
+    "subtitle": "优化成本、清理技术债、顺手推进进度，让每一次提交都有回报。",
+    "heroImage": "assets/hero.png",
+    "status": "今日财运在线",
+    "cards": [
+      {
+        "title": "成本优化",
+        "description": "找出浪费，让每一分资源都花在刀刃上",
+        "icon": "assets/cost.png",
+        "action": {
+          "type": "insert-prompt",
+          "value": "分析当前项目中最值得优先处理的成本和性能问题，按收益与实施成本排序。"
+        }
+      },
+      {
+        "title": "技术债清账",
+        "description": "扫描隐患，给出可执行的还债顺序",
+        "icon": "assets/debt.png",
+        "action": {
+          "type": "insert-prompt",
+          "value": "检查当前代码库的技术债，列出风险、影响范围和分阶段处理方案。"
+        }
+      },
+      {
+        "title": "自动报表总结",
+        "description": "把复杂进展整理成清晰结论",
+        "icon": "assets/report.png",
+        "action": {
+          "type": "insert-prompt",
+          "value": "总结当前任务的完成情况、关键改动、验证结果和下一步建议。"
+        }
+      },
+      {
+        "title": "冲突合并开运",
+        "description": "识别冲突，稳妥合并，少走弯路",
+        "icon": "assets/merge.png",
+        "action": {
+          "type": "focus-composer"
+        }
+      }
+    ],
+    "note": {
+      "title": "今日效率签",
+      "lines": ["专注 +88", "效率 +88", "进度 +88"]
+    }
+  }
+}

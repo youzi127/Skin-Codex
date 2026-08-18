@@ -1,0 +1,240 @@
+html.codex-dream-skin {
+  --fortune-red: #b72f25;
+  --fortune-gold: #d6a82b;
+  --fortune-jade: #3c8069;
+  --fortune-ink: #3d3026;
+}
+
+html.codex-dream-skin body {
+  background-color: #fff6df !important;
+  background-image: linear-gradient(90deg,
+      rgba(255, 249, 234, .6) 0 23%,
+      rgba(255, 249, 234, .36) 40%,
+      rgba(255, 249, 234, .17) 68%,
+      rgba(255, 249, 234, .06) 100%),
+    var(--dream-art) !important;
+  background-repeat: no-repeat !important;
+  background-position: left top, 76% 36% !important;
+  background-size: cover, cover !important;
+  background-attachment: fixed !important;
+}
+
+html.codex-dream-skin main.main-surface.skin-codex-shell {
+  background: rgba(255, 250, 240, .2) !important;
+  box-shadow: none !important;
+}
+
+html.codex-dream-skin .skin-codex-sidebar {
+  color: var(--fortune-ink) !important;
+  background: rgba(255, 249, 234, .38) !important;
+  background-image: none !important;
+  border-right: 1px solid rgba(183, 47, 37, .14) !important;
+  backdrop-filter: blur(8px) saturate(1.02) !important;
+}
+
+html.codex-dream-skin .skin-codex-sidebar-item {
+  border-radius: 7px !important;
+}
+
+html.codex-dream-skin .skin-codex-sidebar-item:hover,
+html.codex-dream-skin .skin-codex-sidebar-item-active {
+  color: #8c221b !important;
+  background: #faecd3 !important;
+}
+
+html.codex-dream-skin .skin-codex-bplus-hero {
+  min-height: 300px;
+  color: var(--fortune-ink);
+  border-color: rgba(183, 47, 37, .19);
+  border-radius: 18px;
+  background-position: 72% center;
+  box-shadow: 0 18px 46px rgba(112, 73, 25, .14);
+}
+
+html.codex-dream-skin .skin-codex-bplus-hero::before {
+  background: linear-gradient(90deg, rgba(255, 249, 234, .98) 0 36%, rgba(255, 249, 234, .76) 52%, transparent 74%);
+}
+
+html.codex-dream-skin .skin-codex-bplus-eyebrow { color: var(--fortune-red); }
+html.codex-dream-skin .skin-codex-bplus-title { color: #6f1f19; font-weight: 800; }
+
+html.codex-dream-skin .skin-codex-bplus-status {
+  color: #7b251d;
+  border-color: rgba(183, 47, 37, .23);
+  background: rgba(255, 243, 215, .9);
+}
+
+html.codex-dream-skin .skin-codex-bplus-action-card {
+  border-radius: 13px;
+  border-color: rgba(146, 104, 35, .16);
+  background: #fffbf1;
+}
+
+html.codex-dream-skin .skin-codex-bplus-action-card-1,
+html.codex-dream-skin .skin-codex-bplus-action-card-3 { background: #fff4e4; }
+
+html.codex-dream-skin .skin-codex-bplus-action-card-2,
+html.codex-dream-skin .skin-codex-bplus-action-card-4 { background: #f3f8ec; }
+
+html.codex-dream-skin .skin-codex-bplus-action-card:hover {
+  border-color: var(--fortune-gold);
+}
+
+html.codex-dream-skin .skin-codex-composer {
+  border-color: rgba(183, 47, 37, .48) !important;
+  border-radius: 15px !important;
+  box-shadow: 0 14px 38px rgba(183, 47, 37, .1) !important;
+}
+
+html.codex-dream-skin .skin-codex-code-block {
+  border-radius: 9px !important;
+}
+
+html.codex-dream-skin .skin-codex-bplus-note {
+  color: #6f421d;
+  background: linear-gradient(135deg, #fff0c2, #f4f8df);
+}
+
+html.codex-dream-skin .skin-codex-shell,
+html.codex-dream-skin .skin-codex-chat,
+html.codex-dream-skin .skin-codex-thread {
+  color: var(--fortune-ink) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+html.codex-dream-skin .skin-codex-chat {
+  border-top-color: rgba(183, 47, 37, .24) !important;
+}
+
+html.codex-dream-skin main.main-surface > header.app-header-tint.skin-codex-header {
+  color: #69231d !important;
+  background: rgba(255, 249, 234, .32) !important;
+  border-bottom: 1px solid rgba(214, 168, 43, .32) !important;
+  box-shadow: 0 4px 16px rgba(112, 73, 25, .07) !important;
+  backdrop-filter: blur(8px) saturate(1.04) !important;
+}
+
+html.codex-dream-skin .dream-task::before {
+  content: none !important;
+}
+
+html.codex-dream-skin .skin-codex-thread::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  inset: 82px 0 0 275px;
+  background: rgba(255, 250, 240, .11);
+  pointer-events: none;
+}
+
+html.codex-dream-skin .skin-codex-thread .bg-gradient-to-t.from-token-main-surface-primary {
+  background: transparent !important;
+}
+
+html.codex-dream-skin .skin-codex-bplus-task {
+  min-height: 118px;
+  color: var(--fortune-ink);
+  border: 2px solid rgba(183, 47, 37, .58);
+  border-radius: 8px;
+  background-position: 76% 39%;
+  box-shadow: inset 0 0 0 3px #fff6df,
+    0 0 0 1px var(--fortune-gold),
+    0 12px 30px rgba(112, 73, 25, .13);
+}
+
+html.codex-dream-skin .skin-codex-bplus-task::before {
+  background: linear-gradient(90deg, #fff7e2 0 40%, rgba(255, 247, 226, .88) 58%, rgba(255, 247, 226, .05) 84%);
+}
+
+html.codex-dream-skin .skin-codex-bplus-task-eyebrow { color: var(--fortune-red); }
+html.codex-dream-skin .skin-codex-bplus-task-title { color: #6f1f19; }
+html.codex-dream-skin .skin-codex-bplus-task-status {
+  color: #7b251d;
+  border-color: rgba(183, 47, 37, .28);
+  background: #fff1cc;
+}
+
+html.codex-dream-skin .skin-codex-diff-card,
+html.codex-dream-skin .skin-codex-tool-card {
+  border-color: rgba(146, 104, 35, .28) !important;
+  border-radius: 8px !important;
+  background: rgba(255, 248, 232, .54) !important;
+  backdrop-filter: blur(10px) saturate(1.02) !important;
+  box-shadow: 5px 5px 0 rgba(60, 128, 105, .09) !important;
+}
+
+html.codex-dream-skin .skin-codex-message-user [class~="bg-token-foreground/5"] {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.codex-dream-skin .skin-codex-composer {
+  border: 2px solid var(--fortune-red) !important;
+  border-radius: 14px !important;
+  background: rgba(255, 253, 245, .58) !important;
+  backdrop-filter: blur(14px) saturate(1.03) !important;
+  box-shadow: 0 0 0 3px var(--fortune-gold),
+    0 14px 36px rgba(112, 73, 25, .14) !important;
+}
+
+html.codex-dream-skin .skin-codex-composer:focus-within {
+  box-shadow: 0 0 0 4px #e7b93a,
+    0 16px 40px rgba(183, 47, 37, .15) !important;
+}
+
+html.codex-dream-skin .skin-codex-model-selector,
+html.codex-dream-skin .skin-codex-access-selector {
+  min-width: 0;
+  color: #6f421d !important;
+  border: 1px solid rgba(214, 168, 43, .3) !important;
+  border-radius: 7px !important;
+  background: #fff4d9 !important;
+}
+
+html.codex-dream-skin .skin-codex-attachment-button,
+html.codex-dream-skin .skin-codex-header-button,
+html.codex-dream-skin .skin-codex-settings-button {
+  color: #7b251d !important;
+  border-radius: 7px !important;
+}
+
+html.codex-dream-skin .skin-codex-header-button:hover,
+html.codex-dream-skin .skin-codex-composer-action:hover {
+  background: #faecd3 !important;
+}
+
+html.codex-dream-skin .skin-codex-send-button {
+  color: #fff8df !important;
+  border: 2px solid #fff4cc !important;
+  background: var(--fortune-red) !important;
+  box-shadow: 0 0 0 2px var(--fortune-gold), 3px 3px 0 rgba(60, 128, 105, .18) !important;
+  transition: transform 160ms ease, box-shadow 160ms ease !important;
+}
+
+html.codex-dream-skin .skin-codex-send-button:hover {
+  transform: translateY(-1px);
+  background: #8f241d !important;
+}
+
+html.codex-dream-skin .skin-codex-code-block {
+  border: 1px solid rgba(214, 168, 43, .28) !important;
+  border-radius: 8px !important;
+  background-color: #f7f5ec !important;
+}
+
+html.codex-dream-skin .skin-codex-dialog,
+html.codex-dream-skin .skin-codex-menu {
+  border: 1px solid rgba(183, 47, 37, .22) !important;
+  border-radius: 8px !important;
+  background: #fff9ea !important;
+  box-shadow: 0 16px 42px rgba(92, 52, 23, .17) !important;
+}
+
+html.codex-dream-skin .skin-codex-thread::-webkit-scrollbar-thumb {
+  border: 3px solid #fffaf0;
+  border-radius: 8px;
+  background: linear-gradient(var(--fortune-red), var(--fortune-gold), var(--fortune-jade));
+}

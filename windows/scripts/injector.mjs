@@ -8,6 +8,8 @@ const scriptPath = typeof __filename === "string" ? __filename : fileURLToPath(i
 const here = path.dirname(scriptPath);
 const root = path.resolve(here, "..");
 const SKIN_VERSION = "1.4.0";
+const CODEX_SHELL_SELECTOR = "main[data-app-shell-main-surface], main.main-surface";
+const CODEX_COMPOSER_SELECTOR = ".composer-surface-chrome, [data-composer-surface-variant]";
 const MAX_ART_BYTES = 16 * 1024 * 1024;
 const MAX_THEME_CSS_BYTES = 512 * 1024;
 const MAX_THEME_COMPONENTS_BYTES = 64 * 1024;
@@ -958,9 +960,9 @@ async function readThemeSourceStamp(loadedTheme) {
 async function probeSession(session) {
   return session.evaluate(`(() => {
     const markers = {
-      shell: Boolean(document.querySelector('main.main-surface')),
+      shell: Boolean(document.querySelector(${JSON.stringify(CODEX_SHELL_SELECTOR)})),
       sidebar: Boolean(document.querySelector('.app-shell-left-panel')),
-      composer: Boolean(document.querySelector('.composer-surface-chrome')),
+      composer: Boolean(document.querySelector(${JSON.stringify(CODEX_COMPOSER_SELECTOR)})),
       main: Boolean(document.querySelector('[role="main"]')),
       appShell: Boolean(document.querySelector('.app-shell-main-content-frame, .app-shell-main-content-top-fade, [data-tab-id]')),
     };
@@ -1043,9 +1045,9 @@ export function earlyPayloadFor(payload, revision) {
       if (window[generationKey] !== generation) { stop(); return true; }
       const root = document.documentElement;
       if (!root || !document.body) return false;
-      const shell = document.querySelector('main.main-surface');
+      const shell = document.querySelector(${JSON.stringify(CODEX_SHELL_SELECTOR)});
       const codexMarker = document.querySelector(
-        '.app-shell-left-panel, .composer-surface-chrome, [role="main"], .app-shell-main-content-frame, .app-shell-main-content-top-fade, [data-tab-id]',
+        '.app-shell-left-panel, .composer-surface-chrome, [data-codex-composer], [data-composer-surface-variant], [role="main"], .app-shell-main-content-frame, .app-shell-main-content-top-fade, [data-tab-id]',
       );
       if (!shell || !codexMarker) return false;
       stop();
@@ -1093,13 +1095,17 @@ async function removeFromSession(session) {
     document.querySelectorAll('.dream-home').forEach((node) => node.classList.remove('dream-home'));
     document.querySelectorAll('.dream-task').forEach((node) => node.classList.remove('dream-task'));
     document.querySelectorAll('.dream-home-shell').forEach((node) => node.classList.remove('dream-home-shell'));
+    document.querySelectorAll('[data-skin-codex-main-surface-alias]').forEach((node) => {
+      node.classList.remove('main-surface');
+      node.removeAttribute('data-skin-codex-main-surface-alias');
+    });
     for (const className of [
       'skin-codex-shell', 'skin-codex-sidebar', 'skin-codex-sidebar-item',
       'skin-codex-sidebar-item-active', 'skin-codex-route', 'skin-codex-home',
       'skin-codex-chat', 'skin-codex-home-cards', 'skin-codex-home-card',
       'skin-codex-composer', 'skin-codex-message', 'skin-codex-message-user',
       'skin-codex-message-assistant', 'skin-codex-code-block', 'skin-codex-dialog',
-      'skin-codex-menu', 'skin-codex-header', 'skin-codex-thread', 'skin-codex-turn',
+      'skin-codex-menu', 'skin-codex-header', 'skin-codex-thread', 'skin-codex-composer-fade', 'skin-codex-turn',
       'skin-codex-tool-card', 'skin-codex-diff-card', 'skin-codex-send-button',
       'skin-codex-composer-action', 'skin-codex-attachment-button',
       'skin-codex-access-selector', 'skin-codex-model-selector',
@@ -1142,7 +1148,7 @@ async function verifySession(session) {
     const bPlus = document.querySelector('.skin-codex-bplus');
     const bPlusTask = document.querySelector('.skin-codex-bplus-task');
     const bPlusCards = [...document.querySelectorAll('.skin-codex-bplus-action-card')].map(box);
-    const shell = document.querySelector('main.main-surface');
+    const shell = document.querySelector(${JSON.stringify(CODEX_SHELL_SELECTOR)});
     const routeMain = document.querySelector('[role="main"]');
     const result = {
       installed: document.documentElement.classList.contains('codex-dream-skin'),
@@ -1163,7 +1169,7 @@ async function verifySession(session) {
       shell: box(shell),
       routeMain: box(routeMain),
       thread: box(document.querySelector('.skin-codex-thread')),
-      composer: box(document.querySelector('.composer-surface-chrome')),
+      composer: box(document.querySelector(${JSON.stringify(CODEX_COMPOSER_SELECTOR)})),
       sidebar: box(document.querySelector('.app-shell-left-panel')),
       viewport: { width: innerWidth, height: innerHeight },
       documentOverflow: {

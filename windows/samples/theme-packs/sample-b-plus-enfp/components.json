@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "chrome": {
+    "route": "home",
+    "title": "灵感工作台",
+    "subtitle": "Codex 主题版",
+    "badge": "创作模式",
+    "icon": "assets/brain.png"
+  },
+  "sidebar": {
+    "defaultIcon": "assets/play.png",
+    "newTaskIcon": "assets/prototype.png",
+    "matches": []
+  },
+  "sticker": {
+    "route": "home",
+    "anchor": "bottom-end",
+    "size": "small",
+    "image": "assets/debug.png",
+    "caption": "灵感补给"
+  },
+  "home": {
+    "eyebrow": "ENFP 灵感发动机已启动",
+    "title": "先有灵感，再把它变成真的",
+    "subtitle": "脑暴、试错、快速落地，今天也把奇思妙想变成能运行的作品。",
+    "heroImage": "assets/hero.png",
+    "status": "今天适合开脑洞",
+    "cards": [
+      {
+        "title": "灵感脑暴",
+        "description": "把脑子里的一万种可能都倒出来",
+        "icon": "assets/brain.png",
+        "action": {
+          "type": "insert-prompt",
+          "value": "围绕我的当前想法进行发散脑暴，给出 5 个差异明显、可以实际落地的方向。"
+        }
+      },
+      {
+        "title": "快速原型",
+        "description": "想法不等人，先跑起来再说",
+        "icon": "assets/prototype.png",
+        "action": {
+          "type": "insert-prompt",
+          "value": "把当前想法做成一个可以运行的最小原型，优先完成核心体验并进行验证。"
+        }
+      },
+      {
+        "title": "边玩边改",
+        "description": "先体验，再决定下一步怎么打磨",
+        "icon": "assets/play.png",
+        "action": {
+          "type": "focus-composer"
+        }
+      },
+      {
+        "title": "欢乐修 Bug",
+        "description": "找到根因，把问题变成经验值",
+        "icon": "assets/debug.png",
+        "action": {
+          "type": "insert-prompt",
+          "value": "先系统定位当前问题的根因，再提供最小修复并补充回归验证。"
+        }
+      }
+    ],
+    "note": {
+      "title": "今日心情卡",
+      "lines": ["创意 +100", "动力 +100", "乐趣 +100"]
+    }
+  }
+}

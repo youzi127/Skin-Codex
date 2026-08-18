@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "sample-b-plus-fortune",
+  "name": "财神打工坊",
+  "image": "background.png",
+  "appearance": "light",
+  "art": {
+    "focusX": 0.72,
+    "focusY": 0.45,
+    "safeArea": "left",
+    "taskMode": "ambient"
+  },
+  "palette": {
+    "accent": "#b72f25"
+  },
+  "style": {
+    "css": "theme.css"
+  },
+  "components": {
+    "file": "components.json"
+  }
+}

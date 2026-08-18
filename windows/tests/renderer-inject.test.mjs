@@ -13,6 +13,8 @@ const sampleComponents = JSON.parse(await fs.readFile(path.join(sampleRoot, "com
 const sampleCss = await fs.readFile(path.join(sampleRoot, "theme.css"), "utf8");
 
 assert.match(renderer, /skin-codex-message-content/, "Renderer must expose a stable message-content class.");
+assert.match(renderer, /data-composer-surface-variant/, "Renderer must recognize the current semantic composer contract.");
+assert.match(renderer, /skin-codex-composer-fade/, "Renderer must expose a stable interface for the native composer fade.");
 assert.match(renderer, /skin-codex-bplus-home/, "Renderer must expose the B+ home module host.");
 assert.match(css, /\.skin-codex-theme-sticker-bottom-end/, "Engine CSS must define the safe sticker anchor.");
 assert.match(css, /pointer-events:\s*none/, "Decorative engine layers must not intercept native actions.");

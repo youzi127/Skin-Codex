@@ -8,7 +8,12 @@ const root = path.resolve(here, "..");
 const packs = path.join(root, "samples", "theme-packs");
 const tar = path.join(process.env.SystemRoot || "C:\\Windows", "System32", "tar.exe");
 
-for (const id of ["sample-b-plus-minimal"]) {
+for (const id of [
+  "sample-b-plus-minimal",
+  "sample-b-plus-enfp",
+  "sample-b-plus-fortune",
+  "sample-b-plus-your-name",
+]) {
   const zip = path.join(packs, `${id}.zip`);
   await fs.rm(zip, { force: true });
   execFileSync(tar, ["-a", "-c", "-f", zip, "-C", path.join(packs, id), "."], {

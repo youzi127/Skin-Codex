@@ -79,8 +79,15 @@ try {
   function Start-DreamSkinPowerShell {
     param([Parameter(Mandatory = $true)][string]$Script, [string[]]$Arguments = @())
     $mode = if ([System.IO.Path]::GetFileName($Script) -ieq 'restore-dream-skin.ps1') { 'restore' } else { 'apply' }
+    $restartMode = if ($Arguments -contains '-RestartExisting') {
+      'restart'
+    } elseif ($Arguments -contains '-PromptRestart') {
+      'prompt'
+    } else {
+      'none'
+    }
     $applyPort = Get-DreamSkinTrayApplyPort
-    Start-Process -FilePath $wscript -ArgumentList "`"$launcher`" $mode $applyPort restart" -WorkingDirectory $SkillRoot `
+    Start-Process -FilePath $wscript -ArgumentList "`"$launcher`" $mode $applyPort $restartMode" -WorkingDirectory $SkillRoot `
       -WindowStyle Hidden | Out-Null
   }
 

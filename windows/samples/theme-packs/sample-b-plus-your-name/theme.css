@@ -1,0 +1,402 @@
+/* Neutralize the engine's full-route immersive wash; components retain their own local readability layers. */
+html:root.codex-dream-skin {
+  --dream-immersive-edge: transparent;
+  --dream-immersive-mid: transparent;
+  --dream-immersive-far: transparent;
+  --dream-immersive-composer: rgba(255, 252, 246, .86);
+  --dream-task-immersive-edge: transparent;
+  --dream-task-immersive-mid: transparent;
+  --dream-task-immersive-far: transparent;
+}
+
+html.codex-dream-skin {
+  --kataware-ink: #2d2945;
+  --kataware-muted: #665d78;
+  --kataware-sky: #168dc8;
+  --kataware-comet: #d85c88;
+  --kataware-gold: #efb65a;
+  --kataware-paper: #fff8ef;
+  --kataware-line: rgba(133, 77, 115, .24);
+}
+
+html.codex-dream-skin body {
+  background-color: #f8dcae !important;
+  background-image: var(--dream-art) !important;
+  background-repeat: no-repeat !important;
+  background-position: 76% 56% !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+}
+
+html.codex-dream-skin main.main-surface.skin-codex-shell,
+html.codex-dream-skin .skin-codex-chat,
+html.codex-dream-skin .skin-codex-thread {
+  color: var(--kataware-ink) !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+html.codex-dream-skin .skin-codex-thread {
+  background: transparent !important;
+}
+
+/* A text-local veil: it protects reading without bleaching the route or turning messages into cards. */
+html.codex-dream-skin .skin-codex-message-content {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+}
+
+html.codex-dream-skin .skin-codex-message-content::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -6px -9px;
+  border-radius: 10px;
+  background: linear-gradient(100deg, rgba(255, 252, 246, .22), rgba(255, 251, 246, .06));
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+html.codex-dream-skin .skin-codex-sidebar {
+  color: var(--kataware-ink) !important;
+  background: linear-gradient(180deg, rgba(255, 249, 239, .74), rgba(255, 239, 226, .48)) !important;
+  border-right: 1px solid rgba(216, 92, 136, .24) !important;
+  backdrop-filter: blur(12px) saturate(1.04) !important;
+}
+
+html.codex-dream-skin .skin-codex-sidebar-item {
+  margin: 2px 8px 2px 5px;
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+  transition: color 180ms ease, background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease !important;
+}
+
+html.codex-dream-skin .skin-codex-sidebar-item:hover {
+  color: #9b385f !important;
+  background: rgba(255, 238, 228, .66) !important;
+  transform: translateX(2px);
+}
+
+html.codex-dream-skin .skin-codex-sidebar .skin-codex-sidebar-item.skin-codex-sidebar-item-active {
+  color: #4e2740 !important;
+  border-color: rgba(216, 92, 136, .34) !important;
+  background: linear-gradient(100deg, rgba(255, 217, 224, .92), rgba(255, 239, 195, .78)) !important;
+  box-shadow: inset 3px 0 0 var(--kataware-comet), 0 4px 14px rgba(126, 70, 98, .10) !important;
+}
+
+html.codex-dream-skin main.main-surface > header.app-header-tint.skin-codex-header {
+  color: #4c4059 !important;
+  background: rgba(255, 251, 244, .33) !important;
+  border-bottom: 1px solid rgba(22, 141, 200, .18) !important;
+  box-shadow: 0 5px 18px rgba(97, 71, 89, .06) !important;
+  backdrop-filter: blur(10px) saturate(1.02) !important;
+}
+
+html.codex-dream-skin .skin-codex-theme-chrome {
+  gap: 10px;
+  color: var(--kataware-ink);
+}
+
+html.codex-dream-skin .skin-codex-theme-chrome-title {
+  letter-spacing: .08em;
+  font-weight: 760;
+}
+
+html.codex-dream-skin .skin-codex-theme-chrome-subtitle {
+  color: var(--kataware-muted);
+}
+
+html.codex-dream-skin .skin-codex-theme-chrome-badge {
+  padding: 4px 9px;
+  color: #8d385e;
+  border: 1px solid rgba(216, 92, 136, .32);
+  border-radius: 999px;
+  background: rgba(255, 247, 242, .56);
+  font-size: 10px;
+  letter-spacing: .08em;
+}
+
+html.codex-dream-skin .dream-home:has(> .skin-codex-bplus) {
+  background: transparent !important;
+}
+
+html.codex-dream-skin .dream-task {
+  background: transparent !important;
+}
+
+html.codex-dream-skin .dream-task::before {
+  display: none !important;
+}
+
+html.codex-dream-skin .skin-codex-bplus-hero {
+  min-height: 248px;
+  color: var(--kataware-ink);
+  border: 1px solid rgba(216, 92, 136, .28);
+  border-radius: 18px 30px 18px 30px;
+  background-color: transparent;
+  background-image: none !important;
+  box-shadow: 0 15px 34px rgba(126, 77, 97, .12), inset 0 1px 0 rgba(255, 255, 255, .62);
+}
+
+html.codex-dream-skin .skin-codex-bplus-hero::before {
+  background: linear-gradient(94deg,
+    rgba(255, 252, 246, .94) 0 39%,
+    rgba(255, 251, 244, .68) 55%,
+    rgba(255, 250, 241, .20) 74%,
+    transparent 100%);
+}
+
+html.codex-dream-skin .skin-codex-bplus-hero-copy {
+  width: min(49%, 540px);
+}
+
+html.codex-dream-skin .skin-codex-bplus-eyebrow {
+  color: #b24770;
+  font-weight: 760;
+  letter-spacing: .09em;
+}
+
+html.codex-dream-skin .skin-codex-bplus-title {
+  max-width: 15ch;
+  color: var(--kataware-ink);
+  font-size: clamp(35px, 3.15vw, 46px);
+  font-weight: 820;
+  letter-spacing: -.045em;
+}
+
+html.codex-dream-skin .skin-codex-bplus-subtitle {
+  color: #5c536a;
+  font-size: 14px;
+}
+
+html.codex-dream-skin .skin-codex-bplus-status {
+  color: #3f5e83;
+  border: 1px solid rgba(22, 141, 200, .30);
+  border-radius: 999px;
+  background: rgba(255, 251, 245, .72);
+  box-shadow: inset 0 -2px 0 rgba(239, 182, 90, .50);
+}
+
+html.codex-dream-skin .skin-codex-bplus-action-card {
+  min-height: 106px;
+  color: var(--kataware-ink);
+  border: 1px solid rgba(125, 97, 126, .20);
+  border-radius: 15px 15px 15px 5px;
+  background: rgba(255, 251, 247, .67);
+  box-shadow: 0 7px 18px rgba(101, 76, 93, .09), inset 0 1px 0 rgba(255, 255, 255, .66);
+  backdrop-filter: blur(8px) saturate(1.03);
+  transition: transform 180ms cubic-bezier(.22, 1, .36, 1), border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+html.codex-dream-skin .skin-codex-bplus-action-card-1 { border-top-color: rgba(22, 141, 200, .48); }
+html.codex-dream-skin .skin-codex-bplus-action-card-2 { border-top-color: rgba(239, 182, 90, .60); }
+html.codex-dream-skin .skin-codex-bplus-action-card-3 { border-top-color: rgba(216, 92, 136, .50); }
+html.codex-dream-skin .skin-codex-bplus-action-card-4 { border-top-color: rgba(77, 172, 167, .50); }
+
+html.codex-dream-skin .skin-codex-bplus-action-card:hover {
+  border-color: rgba(216, 92, 136, .44);
+  background: rgba(255, 253, 249, .84);
+  box-shadow: 0 12px 23px rgba(126, 70, 100, .15), inset 0 1px 0 rgba(255, 255, 255, .72);
+  transform: translateY(-3px);
+}
+
+html.codex-dream-skin .skin-codex-bplus-action-card:active {
+  transform: translateY(-1px) scale(.992);
+}
+
+html.codex-dream-skin .skin-codex-bplus-note {
+  color: #74435d;
+  border: 1px solid rgba(216, 92, 136, .26);
+  border-radius: 12px 12px 4px 12px;
+  background: linear-gradient(105deg, rgba(255, 246, 234, .86), rgba(255, 232, 237, .64));
+  box-shadow: 0 6px 15px rgba(126, 77, 97, .08);
+}
+
+html.codex-dream-skin .skin-codex-composer {
+  color: var(--kataware-ink) !important;
+  border: 1px solid rgba(216, 92, 136, .42) !important;
+  border-radius: 18px 18px 8px 18px !important;
+  background: rgba(255, 252, 246, .86) !important;
+  box-shadow: 0 12px 30px rgba(86, 65, 83, .14), inset 0 -2px 0 rgba(22, 141, 200, .24) !important;
+  backdrop-filter: blur(14px) saturate(1.04) !important;
+}
+
+html.codex-dream-skin .skin-codex-composer:focus-within {
+  box-shadow: 0 0 0 3px rgba(216, 92, 136, .20), 0 14px 34px rgba(86, 65, 83, .15), inset 0 -2px 0 rgba(22, 141, 200, .42) !important;
+}
+
+/* The wide-art engine clears the native frosted surface. Restore the local
+   lens only for the composer and its paired project utility bar. */
+html.codex-dream-skin.dream-art-wide .composer-surface-chrome {
+  backdrop-filter: blur(14px) saturate(1.03) brightness(1.05) !important;
+}
+
+html.codex-dream-skin.dream-art-wide .dream-home-utility {
+  backdrop-filter: blur(14px) saturate(1.03) brightness(1.05) !important;
+}
+
+html.codex-dream-skin .skin-codex-composer .skin-codex-model-selector,
+html.codex-dream-skin .skin-codex-composer .skin-codex-access-selector {
+  color: #5b4567 !important;
+  border: 1px solid rgba(216, 92, 136, .22) !important;
+  border-radius: 999px !important;
+  background: rgba(255, 246, 233, .80) !important;
+}
+
+html.codex-dream-skin .skin-codex-attachment-button,
+html.codex-dream-skin .skin-codex-header-button,
+html.codex-dream-skin .skin-codex-settings-button {
+  color: #65506b !important;
+  border-radius: 9px !important;
+}
+
+html.codex-dream-skin .skin-codex-header-button:hover,
+html.codex-dream-skin .skin-codex-composer-action:hover {
+  background: rgba(255, 217, 224, .46) !important;
+}
+
+html.codex-dream-skin .skin-codex-composer .skin-codex-send-button.skin-codex-control {
+  color: #fff !important;
+  border: 1px solid rgba(126, 46, 82, .22) !important;
+  border-radius: 11px 11px 5px 11px !important;
+  background: linear-gradient(135deg, #d95682, #bd4774 64%, #7b74c7) !important;
+  box-shadow: 0 5px 12px rgba(152, 52, 93, .23), inset 0 1px 0 rgba(255, 255, 255, .28) !important;
+  transition: transform 170ms ease, filter 170ms ease, box-shadow 170ms ease !important;
+}
+
+html.codex-dream-skin .skin-codex-composer .skin-codex-send-button.skin-codex-control:hover {
+  filter: saturate(1.10) brightness(1.04);
+  box-shadow: 0 8px 16px rgba(152, 52, 93, .30), inset 0 1px 0 rgba(255, 255, 255, .30) !important;
+  transform: translateY(-1px);
+}
+
+html.codex-dream-skin .skin-codex-composer .skin-codex-send-button.skin-codex-control:active {
+  box-shadow: 0 3px 8px rgba(152, 52, 93, .24) !important;
+  transform: translateY(1px);
+}
+
+html.codex-dream-skin .skin-codex-code-block {
+  color: #302d47 !important;
+  border: 1px solid rgba(68, 90, 136, .20) !important;
+  border-radius: 12px !important;
+  background: linear-gradient(105deg, rgba(248, 249, 255, .88), rgba(236, 245, 253, .73)) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .72), 0 6px 17px rgba(62, 79, 116, .08) !important;
+}
+
+html.codex-dream-skin .skin-codex-code-block code,
+html.codex-dream-skin .skin-codex-code-block code span {
+  color: inherit !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.codex-dream-skin .skin-codex-inline-code {
+  padding: .08em .32em;
+  color: #96506f !important;
+  border-bottom: 1px solid rgba(216, 92, 136, .26);
+  background: transparent !important;
+}
+
+html.codex-dream-skin .skin-codex-diff-card,
+html.codex-dream-skin .skin-codex-tool-card {
+  border: 1px solid rgba(132, 103, 130, .16) !important;
+  border-radius: 12px !important;
+  background: rgba(255, 252, 248, .56) !important;
+  box-shadow: 0 6px 18px rgba(103, 76, 96, .08) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+html.codex-dream-skin.skin-codex-experience .skin-codex-quote.skin-codex-surface-soft,
+html.codex-dream-skin.skin-codex-experience .skin-codex-callout.skin-codex-surface-soft {
+  margin: .85em 0;
+  padding: .68em .86em;
+  border: 0;
+  border-left: 3px solid var(--kataware-comet);
+  border-radius: 0 11px 11px 0;
+  background: linear-gradient(100deg, rgba(255, 250, 242, .72), rgba(255, 225, 234, .35));
+}
+
+html.codex-dream-skin.skin-codex-experience .skin-codex-table.skin-codex-surface-plain {
+  overflow: hidden;
+  border: 1px solid rgba(90, 79, 109, .17);
+  border-radius: 10px;
+  background: rgba(255, 252, 247, .58);
+}
+
+html.codex-dream-skin.skin-codex-experience .skin-codex-table.skin-codex-density-compact :is(th, td) {
+  padding: .38em .58em;
+  border-color: rgba(90, 79, 109, .13);
+}
+
+html.codex-dream-skin.skin-codex-experience .skin-codex-command-output.skin-codex-surface-raised,
+html.codex-dream-skin.skin-codex-experience .skin-codex-tool-result.skin-codex-surface-soft,
+html.codex-dream-skin.skin-codex-experience .skin-codex-file-reference.skin-codex-surface-plain {
+  border: 1px solid rgba(90, 110, 145, .14);
+  border-radius: 10px;
+  background: rgba(250, 252, 255, .68);
+  box-shadow: 0 4px 13px rgba(72, 86, 117, .07);
+}
+
+html.codex-dream-skin.skin-codex-experience.skin-codex-control-feedback-responsive .skin-codex-control {
+  transition: transform .17s ease, filter .17s ease, background-color .17s ease;
+}
+
+html.codex-dream-skin.skin-codex-experience .skin-codex-control:focus-visible,
+html.codex-dream-skin .skin-codex-bplus-action-card:focus-visible {
+  outline: 2px solid var(--kataware-sky) !important;
+  outline-offset: 3px;
+}
+
+html.codex-dream-skin.skin-codex-experience .skin-codex-control:active:not(:disabled) {
+  filter: saturate(.97) brightness(.99);
+  transform: translateY(1px);
+}
+
+html.codex-dream-skin .skin-codex-dialog,
+html.codex-dream-skin .skin-codex-menu {
+  border: 1px solid rgba(216, 92, 136, .26) !important;
+  border-radius: 14px !important;
+  background: rgba(255, 252, 247, .96) !important;
+  box-shadow: 0 18px 42px rgba(75, 61, 91, .17), inset 0 1px 0 rgba(255, 255, 255, .76) !important;
+}
+
+html.codex-dream-skin .skin-codex-thread::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  border-radius: 10px;
+  background: linear-gradient(var(--kataware-comet), var(--kataware-gold), var(--kataware-sky));
+  background-clip: padding-box;
+}
+
+@media (max-width: 920px) {
+  html.codex-dream-skin body {
+    background-position: left top, 72% 56% !important;
+  }
+
+  html.codex-dream-skin .skin-codex-bplus-hero {
+    min-height: 205px;
+    padding: 24px 40px;
+  }
+
+  html.codex-dream-skin .skin-codex-bplus-hero-copy {
+    width: 56%;
+  }
+
+  html.codex-dream-skin .skin-codex-bplus-title {
+    font-size: 32px;
+  }
+
+  html.codex-dream-skin .skin-codex-bplus-action-card {
+    min-height: 90px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.codex-dream-skin .skin-codex-sidebar-item,
+  html.codex-dream-skin .skin-codex-bplus-action-card,
+  html.codex-dream-skin .skin-codex-composer .skin-codex-send-button.skin-codex-control,
+  html.codex-dream-skin.skin-codex-experience.skin-codex-control-feedback-responsive .skin-codex-control {
+    transition: none !important;
+  }
+}

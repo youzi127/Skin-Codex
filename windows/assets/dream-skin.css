@@ -195,6 +195,7 @@ html.codex-dream-skin .skin-codex-bplus {
 }
 
 html.codex-dream-skin .dream-home:has(> .skin-codex-bplus) {
+  position: relative !important;
   display: flex !important;
   flex-direction: column !important;
   gap: 0 !important;
@@ -202,14 +203,41 @@ html.codex-dream-skin .dream-home:has(> .skin-codex-bplus) {
   overflow-y: auto !important;
 }
 
-html.codex-dream-skin .dream-home:has(> .skin-codex-bplus) > div:first-of-type {
-  min-height: auto !important;
-  flex: 1 0 auto !important;
-  padding-top: 0 !important;
+/* Keep the B+ art in the visual layer. New Codex builds add their home
+   suggestions after this element, so allowing it to take vertical space
+   pushes the native composer below the fold. */
+html.codex-dream-skin .dream-home:has(> .skin-codex-bplus) > .skin-codex-bplus {
+  position: absolute !important;
+  z-index: 3;
+  top: 24px;
+  left: 50%;
+  margin: 0 !important;
+  transform: translateX(-50%);
 }
 
-html.codex-dream-skin .dream-home:has(> .skin-codex-bplus) > div:first-of-type > div:first-child {
+/* This is an engine-owned semantic class, rather than a Codex-internal
+   selector: B+ provides its own four action cards and keeps only the native
+   composer beneath them. */
+html.codex-dream-skin .dream-home:has(> .skin-codex-bplus) .skin-codex-home-cards {
   display: none !important;
+}
+
+/* Preserve the native block's layout role for the composer, but prevent its
+   duplicate welcome prompt from competing visually with the B+ action cards. */
+html.codex-dream-skin .dream-home:has(> .skin-codex-bplus) .skin-codex-native-home-intro {
+  visibility: hidden !important;
+}
+
+/* Codex's project-specific welcome heading is redundant once B+ supplies the
+   home hero. The semantic class intentionally excludes headings owned by B+. */
+html.codex-dream-skin .dream-home:has(> .skin-codex-bplus) .skin-codex-native-home-heading {
+  visibility: hidden !important;
+}
+
+/* Current Codex builds expose their project-specific home prompt through a
+   semantic data-feature. It remains outside B+ and can be hidden safely. */
+html.codex-dream-skin .dream-home:has(> .skin-codex-bplus) .skin-codex-native-home-prompt {
+  visibility: hidden !important;
 }
 
 html.codex-dream-skin .skin-codex-shell,

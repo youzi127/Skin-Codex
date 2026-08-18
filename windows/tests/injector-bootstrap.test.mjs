@@ -13,7 +13,7 @@ function createFixture() {
   const observers = [];
   const timers = new Map();
   let nextTimer = 1;
-  const markers = { shell: false, sidebar: false, main: false };
+  const markers = { shell: false, modernShell: false, sidebar: false, main: false };
   const context = {
     window: { installs: [] },
     document: {
@@ -21,6 +21,9 @@ function createFixture() {
       body: {},
       querySelector(selector) {
         if (selector === "main.main-surface") return markers.shell ? {} : null;
+        if (selector === 'main[data-app-shell-main-surface], main.main-surface') {
+          return markers.shell || markers.modernShell ? {} : null;
+        }
         if (selector === ".app-shell-left-panel") return markers.sidebar ? {} : null;
         if (selector === '[role="main"]') return markers.main ? {} : null;
         if (selector.includes(".app-shell-left-panel") || selector.includes('[role="main"]')) {
@@ -57,6 +60,17 @@ assert.deepEqual(guarded.context.window.installs, [], "A main surface without a 
 guarded.markers.main = true;
 guarded.observers[0].callback([]);
 assert.deepEqual(guarded.context.window.installs, ["guarded"], "The guarded payload should install once the shell is complete.");
+
+const modernShell = createFixture();
+vm.runInNewContext(earlyPayloadFor('window.installs.push("modern")', "modern"), modernShell.context);
+modernShell.markers.modernShell = true;
+modernShell.markers.sidebar = true;
+modernShell.observers[0].callback([]);
+assert.deepEqual(
+  modernShell.context.window.installs,
+  ["modern"],
+  "The early payload must recognize Codex's current semantic main-surface attribute, not only its retired CSS class.",
+);
 
 const generations = createFixture();
 vm.runInNewContext(earlyPayloadFor('window.installs.push("old")', "old"), generations.context);

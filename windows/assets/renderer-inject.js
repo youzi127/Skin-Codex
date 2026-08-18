@@ -2,6 +2,10 @@
   const STATE_KEY = "__CODEX_DREAM_SKIN_STATE__";
   const STYLE_ID = "codex-dream-skin-style";
   const CHROME_ID = "codex-dream-skin-chrome";
+  const SHELL_SELECTOR = "main[data-app-shell-main-surface], main.main-surface";
+  const COMPOSER_SURFACE_SELECTOR = ".composer-surface-chrome, [data-composer-surface-variant]";
+  const LEGACY_SHELL_CLASS = "main-surface";
+  const SHELL_ALIAS_ATTRIBUTE = "data-skin-codex-main-surface-alias";
   const ROOT_CLASSES = [
     "codex-dream-skin",
     "dream-theme-light",
@@ -40,10 +44,10 @@
   const COMPONENT_CLASSES = [
     "skin-codex-shell", "skin-codex-sidebar", "skin-codex-sidebar-item",
     "skin-codex-sidebar-item-active", "skin-codex-route", "skin-codex-home",
-    "skin-codex-chat", "skin-codex-home-cards", "skin-codex-home-card",
+    "skin-codex-chat", "skin-codex-home-cards", "skin-codex-home-card", "skin-codex-native-home-intro", "skin-codex-native-home-heading", "skin-codex-native-home-prompt",
     "skin-codex-composer", "skin-codex-message", "skin-codex-message-user",
     "skin-codex-message-assistant", "skin-codex-message-content", "skin-codex-code-block", "skin-codex-inline-code", "skin-codex-dialog",
-    "skin-codex-menu", "skin-codex-header", "skin-codex-thread", "skin-codex-turn",
+    "skin-codex-menu", "skin-codex-header", "skin-codex-thread", "skin-codex-composer-fade", "skin-codex-turn",
     "skin-codex-tool-card", "skin-codex-diff-card", "skin-codex-send-button",
     "skin-codex-composer-action", "skin-codex-attachment-button",
     "skin-codex-access-selector", "skin-codex-model-selector",
@@ -335,6 +339,10 @@
     document.querySelectorAll(".dream-home").forEach((node) => node.classList.remove("dream-home"));
     document.querySelectorAll(".dream-task").forEach((node) => node.classList.remove("dream-task"));
     document.querySelectorAll(".dream-home-shell").forEach((node) => node.classList.remove("dream-home-shell"));
+    document.querySelectorAll(`[${SHELL_ALIAS_ATTRIBUTE}]`).forEach((node) => {
+      node.classList.remove(LEGACY_SHELL_CLASS);
+      node.removeAttribute(SHELL_ALIAS_ATTRIBUTE);
+    });
     document.querySelectorAll(`.${HOME_UTILITY_CLASS}`).forEach((node) => node.classList.remove(HOME_UTILITY_CLASS));
     for (const className of COMPONENT_CLASSES) {
       document.querySelectorAll(`.${className}`).forEach((node) => node.classList.remove(className));
@@ -391,7 +399,7 @@
     syncClass("skin-codex-route", routes);
     syncClass("skin-codex-home", home ? [home] : []);
     syncClass("skin-codex-chat", [...routes].filter((route) => route !== home));
-    const composers = [...document.querySelectorAll(".composer-surface-chrome")];
+    const composers = [...document.querySelectorAll(COMPOSER_SURFACE_SELECTOR)];
     syncClass("skin-codex-composer", composers);
     const headers = [...document.querySelectorAll("header.app-header-tint")];
     syncClass("skin-codex-header", headers);
@@ -399,6 +407,11 @@
       (header) => [...(header.querySelectorAll?.("button") ?? [])],
     ));
     syncClass("skin-codex-thread", document.querySelectorAll(".thread-scroll-container"));
+    const composerFades = [...document.querySelectorAll(".thread-scroll-container .bg-gradient-to-t")]
+      .filter((node) =>
+        node.classList.contains("from-surface")
+        || node.classList.contains("from-token-main-surface-primary"));
+    syncClass("skin-codex-composer-fade", composerFades);
 
     const semanticMessages = [...document.querySelectorAll("[data-message-author-role]")];
     const modernUsers = [...document.querySelectorAll('[data-content-search-unit-key$=":user"]')];
@@ -498,6 +511,22 @@
     const cardContainer = home?.querySelector?.(".group\\/home-suggestions") ?? null;
     syncClass("skin-codex-home-cards", cardContainer ? [cardContainer] : []);
     syncClass("skin-codex-home-card", cardContainer?.querySelectorAll?.("button") ?? []);
+    let nativeHomeIntro = null;
+    let cardAnchor = cardContainer;
+    for (let depth = 0; cardAnchor && depth < 3; depth += 1) {
+      const candidate = cardAnchor.previousElementSibling;
+      if (candidate?.querySelector?.('h1, h2, h3, [role="heading"]')) {
+        nativeHomeIntro = candidate;
+        break;
+      }
+      cardAnchor = cardAnchor.parentElement;
+    }
+    syncClass("skin-codex-native-home-intro", nativeHomeIntro ? [nativeHomeIntro] : []);
+    const nativeHomeHeadings = home
+      ? [...home.querySelectorAll?.('h1, h2, h3, [role="heading"]') ?? []].filter((heading) => !heading.closest?.(".skin-codex-bplus"))
+      : [];
+    syncClass("skin-codex-native-home-heading", nativeHomeHeadings);
+    syncClass("skin-codex-native-home-prompt", home?.querySelectorAll?.('[data-feature="game-source"]') ?? []);
     const controls = experience ? [...new Set([
       ...sidebarItems, ...headers.flatMap((header) => [...(header.querySelectorAll?.("button") ?? [])]),
       ...composerButtons, ...settingsButtons,
@@ -737,13 +766,17 @@
     const root = document.documentElement;
     if (!root || !document.body) return;
 
-    const shellMain = document.querySelector("main.main-surface");
+    const shellMain = document.querySelector(SHELL_SELECTOR);
     const codexMarker = document.querySelector(
       ".app-shell-left-panel, .composer-surface-chrome, [role='main'], .app-shell-main-content-frame, .app-shell-main-content-top-fade, [data-tab-id]",
     );
     if (!shellMain || !codexMarker) {
       clearSkinDom();
       return;
+    }
+    if (!shellMain.classList.contains(LEGACY_SHELL_CLASS)) {
+      shellMain.classList.add(LEGACY_SHELL_CLASS);
+      shellMain.setAttribute(SHELL_ALIAS_ATTRIBUTE, "true");
     }
 
     root.classList.add("codex-dream-skin");

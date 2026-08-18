@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "sample-b-plus-enfp",
+  "name": "ENFP 灵感工作台",
+  "image": "background.png",
+  "appearance": "light",
+  "art": {
+    "focusX": 0.74,
+    "focusY": 0.42,
+    "safeArea": "left",
+    "taskMode": "ambient"
+  },
+  "palette": {
+    "accent": "#18a99a"
+  },
+  "style": {
+    "css": "theme.css"
+  },
+  "components": {
+    "file": "components.json"
+  }
+}

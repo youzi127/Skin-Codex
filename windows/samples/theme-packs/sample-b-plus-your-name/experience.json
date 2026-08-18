@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "content": {
+    "codeBlock": { "surface": "raised", "density": "comfortable" },
+    "inlineCode": { "surface": "soft" },
+    "quote": { "surface": "soft", "density": "comfortable" },
+    "table": { "surface": "plain", "density": "compact" },
+    "callout": { "surface": "soft" },
+    "commandOutput": { "surface": "raised", "density": "compact" },
+    "toolResult": { "surface": "soft" },
+    "fileReference": { "surface": "plain" }
+  },
+  "controls": { "feedback": "responsive" }
+}
